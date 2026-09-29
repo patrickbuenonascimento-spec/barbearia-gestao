@@ -1,9 +1,9 @@
-/* v30 -> v31 loader: carrega a Gestão completa com datas, gráficos e Atendimentos */
+/* v30 -> v32 loader: carrega Gestão fiel à planilha e Recuperar Clientes no menu lateral */
 (function(){
-  if (window.__gestaoV31Loader) return;
-  window.__gestaoV31Loader = true;
+  if (window.__gestaoV32Loader) return;
+  window.__gestaoV32Loader = true;
   var s = document.createElement('script');
-  s.src = '/patch-v31.js?v=31';
+  s.src = '/patch-v32.js?v=32';
   s.defer = true;
   document.head.appendChild(s);
 })();
