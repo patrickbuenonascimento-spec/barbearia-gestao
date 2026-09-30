@@ -4,8 +4,8 @@ export default async function handler(request, context) {
   if (!contentType.includes('text/html')) return response;
 
   let html = await response.text();
-  const injection = '<script src="/patch-v26.js?v=26"></script><script src="/patch-v30.js?v=30"></script><script src="/patch-v33.js?v=33"></script><script src="/patch-v38.js?v=38"></script><script src="/patch-v39.js?v=39"></script><script src="/patch-v40.js?v=40"></script>';
-  if (!html.includes('/patch-v40.js')) {
+  const injection = '<script src="/patch-v26.js?v=26"></script><script src="/patch-v30.js?v=30"></script><script src="/patch-v33.js?v=33"></script><script src="/patch-v38.js?v=38"></script><script src="/patch-v41.js?v=41"></script>';
+  if (!html.includes('/patch-v41.js')) {
     html = html.replace('</body>', injection + '</body>');
   }
 
@@ -16,5 +16,5 @@ export default async function handler(request, context) {
 
 export const config = {
   path: '/*',
-  excludedPath: ['/patch-v26.js', '/patch-v30.js', '/patch-v33.js', '/patch-v38.js', '/patch-v39.js', '/patch-v40.js', '/.netlify/functions/*', '/*.js', '/*.css', '/*.png', '/*.jpg', '/*.jpeg', '/*.webp', '/*.svg', '/*.ico']
+  excludedPath: ['/patch-v26.js', '/patch-v30.js', '/patch-v33.js', '/patch-v38.js', '/patch-v41.js', '/.netlify/functions/*', '/*.js', '/*.css', '/*.png', '/*.jpg', '/*.jpeg', '/*.webp', '/*.svg', '/*.ico']
 };
