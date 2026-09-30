@@ -3,6 +3,18 @@
   functions = "netlify/functions"
 
 [[redirects]]
+  from = "/api/disko-proxy"
+  to = "/.netlify/functions/disko-proxy"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/sheets-proxy"
+  to = "/.netlify/functions/sheets-proxy"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
