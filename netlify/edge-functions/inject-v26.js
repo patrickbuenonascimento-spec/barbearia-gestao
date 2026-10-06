@@ -4,8 +4,8 @@ export default async function handler(request, context) {
   if (!contentType.includes('text/html')) return response;
 
   let html = await response.text();
-  const injection = '<script src="/patch-v26.js?v=26"></script><script src="/patch-v30.js?v=30"></script><script src="/patch-v46.js?v=46"></script>';
-  if (!html.includes('/patch-v46.js')) {
+  const injection = '<script src="/patch-v26.js?v=26"></script><script src="/patch-v30.js?v=30"></script><script src="/patch-v47.js?v=47"></script>';
+  if (!html.includes('/patch-v47.js')) {
     html = html.replace('</body>', injection + '</body>');
   }
 
@@ -16,5 +16,5 @@ export default async function handler(request, context) {
 
 export const config = {
   path: '/*',
-  excludedPath: ['/patch-v26.js', '/patch-v30.js', '/patch-v46.js', '/api/*', '/.netlify/functions/*', '/*.js', '/*.css', '/*.png', '/*.jpg', '/*.jpeg', '/*.webp', '/*.svg', '/*.ico']
+  excludedPath: ['/patch-v26.js', '/patch-v30.js', '/patch-v47.js', '/api/*', '/.netlify/functions/*', '/*.js', '/*.css', '/*.png', '/*.jpg', '/*.jpeg', '/*.webp', '/*.svg', '/*.ico']
 };
